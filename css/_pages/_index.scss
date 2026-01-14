@@ -54,6 +54,16 @@ body {
   }
 
   main {
+
+    @include media-max($phone-max){
+          font-size: 14px;
+        }
+
+        @include media-max($tablet-max){
+          display: flex;
+          flex-direction: column;
+            gap: 2rem;
+          }
     button {
       background-color: $orange;
       padding: 2% 5%;
@@ -98,9 +108,24 @@ body {
       color: $main-white;
       height: 35rem;
 
+      @include media-max($tablet-max){
+            height: 20rem;
+          }
+
       .main-text {
         width: 25%;
         padding: 10%;
+
+        @include media-max($tablet-max){
+          margin: 0 auto;
+          width: 100%;
+          text-align: center;
+          padding: 0;
+          padding: 5% 0;
+
+        }
+
+        
       }
     }
 
@@ -116,11 +141,27 @@ body {
         display: flex;
         justify-content: center;
         background-color: $main-color;
+        flex-wrap: wrap;
+
+        @include media-max($tablet-max){
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+        }
+
         figure {
           display: flex;
           flex-direction: column;
           width: 15%;
           text-align: center;
+
+          @include media-max($tablet-max){
+            width: 50%;
+          }
+
+          @include media-max($phone-max){
+            width: 70%;
+          }
 
           img {
             width: 100%;
@@ -142,7 +183,6 @@ body {
           }
 
           button {
-            width: 50%;
             align-self: center;
           }
         }
@@ -150,6 +190,7 @@ body {
     }
 
     .tea-type {
+
       .title {
         text-align: center;
         font-style: italic;
@@ -164,6 +205,12 @@ body {
         gap: 5%;
         justify-content: center;
         margin-bottom: 4rem;
+
+        @include media-max($phone-max){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
 
         .leaf {
           text-align: center;
@@ -210,14 +257,33 @@ body {
       display: flex;
       justify-content: space-evenly;
 
+      @include media-max($tablet-max){
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 2rem;
+          }
+
       .info-title {
         width: 30%;
         display: flex;
         flex-direction: column;
 
+        @include media-max($laptop-max){
+            width: 50%;
+            padding-bottom: 2.5rem;
+          }
+
+          @include media-max($tablet-max){
+            text-align: center;
+          }
+
+          @include media-max($phone-max){
+            font-size: 14px;
+          }
+
         span {
           font-weight: 600;
-        }
+          }
 
         button {
           background-color: transparent;
@@ -232,16 +298,27 @@ body {
             color: $main-white;
             background-color: $main-black;
           }
+
+          @include media-max($tablet-max){
+            align-self: center;
+          }
         }
       }
 
       .info-img {
         width: 40%;
    
+        @include media-max($tablet-max){
+           width: 80%; 
+          }
 
         img {
           width: 100%;
           height: 100%;
+
+          @include media-max($laptop-max){
+            object-fit: fill;
+          }
         }
       }
     }
@@ -256,6 +333,10 @@ body {
       div {
         width: 50%;
         text-align: center;
+
+        @include media-max($tablet-max){
+            width: 90%;
+          }
       }
 
       form {
@@ -264,11 +345,23 @@ body {
         align-items: center;
         width: 50%;
 
+        @include media-max($tablet-max){
+            width: 90%;
+          }
+
         input {
           width: 40%;
           margin-bottom: 2%;
           padding: 4px 5px;
           border: 1px solid $orange;
+
+          @include media-max($tablet-max){
+            width: 60%;
+          }
+
+          @include media-max($laptop-max){
+            width: 50%;
+          }
         }
 
         button {
@@ -285,8 +378,16 @@ body {
     display: flex;
     color: $main-white;
 
+    @include media-max($tablet-max){
+           flex-direction: column; 
+           align-items: center;
+           font-size: 14px;
+          }
+
+
     .footer-links {
       width: 100%;
+
 
       a {
         color: $main-white;
@@ -306,6 +407,11 @@ body {
         display: flex;
         justify-content: space-between;
 
+        @include media-max($tablet-max){
+           flex-direction: column; 
+           align-items: center;
+          }
+
         .links {
           line-height: 2.5rem;
         }
@@ -316,6 +422,11 @@ body {
 
         ul {
           line-height: 1.5rem;
+
+          @include media-max($tablet-max){
+            padding: 0;
+            text-align: center;
+          }
 
           li {
             list-style-type: none;
